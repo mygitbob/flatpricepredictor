@@ -1,0 +1,43 @@
+{%extends 'base.html'%} {%block body%}
+
+<h3>{{the_title}}</h3>
+<!--Ein Formular, um Eingaben zu machen-->
+<form method='post' action='/calculate'>
+    <table>
+        <p>Wohnungsdaten :</p>
+        
+	<tr><td>Groesse in qm :</td>
+	<td><select name='die_groesse'>	
+	{% for i in range(40,185,5)%}
+	<option value={{i}}>{{i}}</option>
+	{% endfor %}
+	</select></td></tr>
+
+	<tr><td>Anzahl der Zimmer :</td>
+	<td><select name='die_zimmer'>	
+	{% for i in range(10,75,5)%}
+	<option value={{i/10}}>{{i/10}}</option>
+	{% endfor %}
+	</select></td></tr>
+
+	<tr><td>Stadtteil :</td>
+	<td><select name='der_stadtteil'>
+	<option value='alle'>alle</option>
+	{% for o in data.keys() %}
+	<option value={{o}}>{{o}}</option>
+	{% endfor %}
+	</select></td></tr>
+
+	<tr><td>Ausstattung :</td>
+	<td><select name='die_ausstattung'>
+	<option value='egal'>egal</option>
+	<option value='gering'>gering</option>
+	<option value='normal'>normal</option>
+	<option value='luxus'>luxus</option>
+	</select></td></tr>
+
+    </table>
+    <p><input type='submit' value='Wohnungspreis berechnen'></p>
+</form>
+
+{%endblock%}

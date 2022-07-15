@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<h3>{{the_title}}</h3>
+
+<p>Die Suche nach einer Wohnung mit einer Groesse von <strong>{{die_groesse}}</strong> Quadratmetern, <strong>{{die_zimmer}}</strong> Zimmer im Stadtteil  <strong>{{der_stadtteil}}</strong> mit der Ausstattung <strong>{{die_ausstattung}}</strong> hat folgendes Ergebnis:</p>
+
+<p>Der geschaetzte Preis fuer die gesuchte Wohnung betraegt:</p>
+<h3>{{das_ergebnis}}</h3>
+{{die_warnung}}
+{%endblock%}
